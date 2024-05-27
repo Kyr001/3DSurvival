@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 378630074}
   - component: {fileID: 378630076}
   - component: {fileID: 378630075}
+  - component: {fileID: 378630077}
   m_Layer: 5
   m_Name: Hunger
   m_TagString: Untagged
@@ -232,6 +233,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378630073}
   m_CullTransparentMesh: 1
+--- !u!114 &378630077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378630073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81c60364b96d0a4b8e0e4296e18eacd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &379675656
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 807353670}
   - component: {fileID: 807353671}
+  - component: {fileID: 807353672}
   m_Layer: 0
   m_Name: Conditions
   m_TagString: Untagged
@@ -568,6 +582,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &807353672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807353669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce85d836e8d69b544a91257e8ec6684a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &849197265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1053,6 +1079,7 @@ GameObject:
   - component: {fileID: 1424902359}
   - component: {fileID: 1424902361}
   - component: {fileID: 1424902360}
+  - component: {fileID: 1424902362}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -1119,6 +1146,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424902358}
   m_CullTransparentMesh: 1
+--- !u!114 &1424902362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424902358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81c60364b96d0a4b8e0e4296e18eacd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1710906803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1530,7 @@ GameObject:
   - component: {fileID: 1915023540}
   - component: {fileID: 1915023542}
   - component: {fileID: 1915023541}
+  - component: {fileID: 1915023543}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -1557,6 +1597,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915023539}
   m_CullTransparentMesh: 1
+--- !u!114 &1915023543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915023539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81c60364b96d0a4b8e0e4296e18eacd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
