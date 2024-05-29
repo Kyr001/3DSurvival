@@ -32,14 +32,13 @@ public class Condition : MonoBehaviour
         return curValue / maxValue; 
     }
 
-    public void Add(float value)
+    public void Add(float amount)
     {
-        curValue += value;
+        curValue = Mathf.Min(curValue + amount, maxValue); // 100 초과되지 않게 한다
     }
-
 
     public void Subtract(float value)
     {
-        curValue -= value;
+        curValue = Mathf.Max(curValue - value, 0); // 0보다 작아지지 않게 한다
     }
 }
