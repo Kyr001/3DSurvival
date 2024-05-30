@@ -21,6 +21,9 @@ public class Interaction : MonoBehaviour
     public TextMeshProUGUI promptText;
     private Camera camera;
 
+    //private PlayerCondition condition;
+    //private ItemObject itemObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +71,7 @@ public class Interaction : MonoBehaviour
             curInteractable.OnInteract();
             curInteractGameObject = null;
             curInteractable = null;
-            promptText.gameObject.SetActive(true) ;
+            promptText.gameObject.SetActive(false) ;
         }
     }
 }

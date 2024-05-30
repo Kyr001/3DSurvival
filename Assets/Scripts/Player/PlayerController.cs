@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
     void FixedUpdate() //물리연산
     {
         Move();
@@ -107,6 +106,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // 플레이어가 점프대 위에 있는지 확인
     private float CheckSuperJump()
     {
         Ray[] rays = new Ray[4]
@@ -129,7 +129,6 @@ public class PlayerController : MonoBehaviour
     }
 
     // 플레이어가 바닥에 붙어있는지 확인 
-
     bool IsGrounded()
     {
         Ray[] rays = new Ray[4]
