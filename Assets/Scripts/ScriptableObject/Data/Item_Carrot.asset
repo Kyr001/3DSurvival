@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Item_Carrot
   m_EditorClassIdentifier: 
   displayName: "\uB2F9\uADFC"
-  description: "\uCCB4\uB825\uACFC \uBC30\uACE0\uD514\uC744 \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+  description: "\uCCB4\uB825\uACFC \uBC30\uACE0\uD514\uC744 \uD68C\uBCF5\uD569\uB2C8\uB2E4.
+    \uC0AC\uC6A9 \uC2DC \uC774\uB3D9\uC18D\uB3C4 \uB5A8\uC5B4\uC9D0"
   type: 1
   icon: {fileID: 21300000, guid: b53822ec75d701e49b9947d1d09fd81e, type: 3}
   dropPrefab: {fileID: 1559495500617007905, guid: 7b3a69f673e6c0548a0bea377eb04ad8, type: 3}

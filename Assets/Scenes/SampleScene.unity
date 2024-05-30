@@ -2661,6 +2661,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 248405366848075109, guid: 7b3a69f673e6c0548a0bea377eb04ad8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1559495500617007905, guid: 7b3a69f673e6c0548a0bea377eb04ad8, type: 3}
       propertyPath: m_Name
       value: Item_Carrot
