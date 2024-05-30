@@ -28,12 +28,13 @@ public class Interaction : MonoBehaviour
     void Start()
     {
         camera = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time - lastCheckTIme > checkRate)
+        if (Time.time - lastCheckTIme > checkRate)
         {
             lastCheckTIme = Time.time;
 
@@ -53,25 +54,27 @@ public class Interaction : MonoBehaviour
             {
                 curInteractGameObject = null;
                 curInteractable = null;
-                promptText.gameObject.SetActive(false);
+                promptText.text = "[E] 상호작용";
+                //promptText.gameObject.SetActive(false);
             }
         }
     }
 
     private void SetPromptText()
     {
-        promptText.gameObject.SetActive(true);
+        //promptText.gameObject.SetActive(true);
         promptText.text = curInteractable.GetInteractPrompt();
     }
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started && curInteractable != null)
+        if (context.phase == InputActionPhase.Started && curInteractable != null)
         {
             curInteractable.OnInteract();
             curInteractGameObject = null;
             curInteractable = null;
-            promptText.gameObject.SetActive(false) ;
+            promptText.text = "[E] 상호작용";
+            //promptText.gameObject.SetActive(false);
         }
     }
 }

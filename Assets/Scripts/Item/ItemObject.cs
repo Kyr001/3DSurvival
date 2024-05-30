@@ -44,7 +44,7 @@ public class ItemObject : MonoBehaviour, IInteractable
         string str;
 
         if (!itemRenderer.enabled)
-            str = "";
+            str = "[E] 상호작용";
         else
             str = $"{data.displayName}\n{data.description}";
 
