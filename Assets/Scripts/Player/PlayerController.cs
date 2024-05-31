@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public float maxXLook;
     private float camCurXRot;
     public float lookSensitivity;
+    public GameObject maincamera;
+    public GameObject subcamera;
 
     private Vector2 mouseDelta;
 
@@ -50,10 +52,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        //if(canLook)
-        {
-            CameraLook();
-        }
+        CameraLook();
     }
 
     private void Move()
@@ -75,6 +74,31 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        mouseDelta = context.ReadValue<Vector2>();
+    }
+
+    public void OnSwitchCamera(InputAction.CallbackContext context)
+    {
+
+        if (context.phase == InputActionPhase.Started)
+        {
+            if (maincamera.activeSelf)
+            {
+                Debug.Log($"{subcamera} active");
+                maincamera.SetActive(false);
+                subcamera.SetActive(true);
+            }
+            else
+            {
+                Debug.Log($"{maincamera} active");
+                subcamera.SetActive(false);
+                maincamera.SetActive(true);
+            }
+        }
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
        if(context.phase == InputActionPhase.Performed) // 키가 눌릴 때 Started, 키가 눌린 후에도 계속 호출하려면 Performed
@@ -86,11 +110,6 @@ public class PlayerController : MonoBehaviour
         {
             curMovementInput = Vector2.zero;
         }
-    }
-
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        mouseDelta = context.ReadValue<Vector2>();
     }
 
 
@@ -125,7 +144,7 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(rays[i], 0.2f, jumpAreaMask))
             {
                 Debug.Log("슈퍼점프");
-                return jumpPower * 5.0f;
+                return jumpPower * 4.0f;
             }
         }
         return jumpPower;
