@@ -11,14 +11,18 @@ public class ItemObject : MonoBehaviour, IInteractable
     private PlayerController controller;
     private float orgMoveSpeed;
 
-    private float maintainEffectTime = 15.0f;
-    private float itemEffect = 0.3f;
+    [SerializeField]
+    public float maintainEffectTime = 15.0f;
+    public float itemEffect = 0.3f;
+
     private MeshRenderer itemRenderer;
-    private bool isEffeted;
+    private Light itemLight;
+    private bool isEffeted = false;
 
     public void Awake()
     {
         itemRenderer = GetComponentInChildren<MeshRenderer>();
+        itemLight = GetComponentInChildren<Light>();
     }
 
     public void OnInteract()
@@ -35,6 +39,8 @@ public class ItemObject : MonoBehaviour, IInteractable
             Consume();
             StartCoroutine(ApplyItemEffect());
         }
+        else if (data.type == ItemType.Consumable && isEffeted)
+            Debug.Log("Item Already Used");
         else
             Destroy(gameObject);
     }
@@ -70,7 +76,8 @@ public class ItemObject : MonoBehaviour, IInteractable
     {
         isEffeted = true;
         itemRenderer.enabled = false;
-        
+        itemLight.enabled = false;
+
         Debug.Log("Item Used");
         controller.moveSpeed = controller.moveSpeed * itemEffect;
 
@@ -78,9 +85,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 
         controller.moveSpeed = orgMoveSpeed;
         Destroy(gameObject);
-        isEffeted = false;
         Debug.Log("Item Effect Finished");
+        isEffeted = false;
     }
-
-
 }

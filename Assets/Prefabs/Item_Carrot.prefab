@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7213041329951021238}
   - component: {fileID: 9077550096592908828}
   - component: {fileID: 2446348160190921310}
-  - component: {fileID: 5073174995909493424}
   - component: {fileID: 248405366848075109}
   m_Layer: 7
   m_Name: Item_Carrot
@@ -62,7 +61,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &9077550096592908828
 BoxCollider:
@@ -98,22 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 03de9f78cf2be4b45893ff11c597330d, type: 2}
---- !u!111 &5073174995909493424
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559495500617007905}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1f94f06ab5941d647bda339792bad677, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 1f94f06ab5941d647bda339792bad677, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  maintainEffectTime: 15
+  itemEffect: 0.3
 --- !u!108 &248405366848075109
 Light:
   m_ObjectHideFlags: 0
@@ -126,7 +111,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.36536098, g: 1, b: 0, a: 1}
-  m_Intensity: 10
+  m_Intensity: 2
   m_Range: 1
   m_SpotAngle: 90
   m_InnerSpotAngle: 9
@@ -187,6 +172,7 @@ GameObject:
   - component: {fileID: 6303119708480982619}
   - component: {fileID: 5998178510235858221}
   - component: {fileID: 6338138170159021222}
+  - component: {fileID: 365612213961792002}
   m_Layer: 7
   m_Name: Carrot
   m_TagString: Untagged
@@ -259,3 +245,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!111 &365612213961792002
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953103324330586803}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1f94f06ab5941d647bda339792bad677, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 1f94f06ab5941d647bda339792bad677, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
