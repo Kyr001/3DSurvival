@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask jumpAreaMask;
     public bool isMoving = false;
 
+
     [Header("Look")]
     public Transform cameraContainer;
     public float minXLook;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     //public bool canLook = true;
 
     private Rigidbody _rigidbody;
+    public Vector3 newGravity = new Vector3(0, -10f, 0);
 
     private void Awake()
     {
@@ -41,12 +43,15 @@ public class PlayerController : MonoBehaviour
         //커서 보이지 않게 해줌
         Cursor.lockState = CursorLockMode.Locked;
 
+        Physics.gravity = newGravity;
     }
 
     void FixedUpdate() //물리연산
     {
         if(curMovementInput == Vector2.zero)
+        {
             isMoving = false;
+        }
         Move();
     }
 
@@ -60,7 +65,6 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
         dir *= moveSpeed; //움직이는 힘을 곱해줌
         dir.y = _rigidbody.velocity.y; // 점프할 때만 y값이 변함
-
         _rigidbody.velocity = dir;
     }
 
@@ -101,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-       if(context.phase == InputActionPhase.Performed) // 키가 눌릴 때 Started, 키가 눌린 후에도 계속 호출하려면 Performed
+       if( context.phase == InputActionPhase.Performed) // 키가 눌릴 때 Started, 키가 눌린 후에도 계속 호출하려면 Performed
         {
             isMoving = true;
             curMovementInput = context.ReadValue<Vector2>();
@@ -143,8 +147,8 @@ public class PlayerController : MonoBehaviour
         {
             if (Physics.Raycast(rays[i], 0.2f, jumpAreaMask))
             {
-                Debug.Log("슈퍼점프");
-                return jumpPower * 4.0f;
+                Debug.Log("Super Jump!");
+                return jumpPower * 3.0f;
             }
         }
         return jumpPower;
