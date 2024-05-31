@@ -11,7 +11,7 @@ public class ItemObject : MonoBehaviour, IInteractable
     private PlayerController controller;
     private float orgMoveSpeed;
 
-    private float elapseTime = 15.0f;
+    private float maintainEffectTime = 15.0f;
     private float itemEffect = 0.3f;
     private MeshRenderer itemRenderer;
     private bool isEffeted;
@@ -74,7 +74,7 @@ public class ItemObject : MonoBehaviour, IInteractable
         Debug.Log("Item Used");
         controller.moveSpeed = controller.moveSpeed * itemEffect;
 
-        yield return new WaitForSeconds(elapseTime);
+        yield return new WaitForSeconds(maintainEffectTime);
 
         controller.moveSpeed = orgMoveSpeed;
         Destroy(gameObject);
