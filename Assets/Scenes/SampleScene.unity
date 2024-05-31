@@ -2001,7 +2001,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843036563}
   serializedVersion: 4
-  m_Mass: 30
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpPower: 100
+  jumpPower: 25
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 279
@@ -2159,12 +2159,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isMoving: 0
+  isJumping: 0
   cameraContainer: {fileID: 183834482}
   minXLook: -65
   maxXLook: 65
   lookSensitivity: 0.5
   maincamera: {fileID: 963194225}
   subcamera: {fileID: 785825513}
+  newGravity: {x: 0, y: -100, z: 0}
 --- !u!114 &1843036569
 MonoBehaviour:
   m_ObjectHideFlags: 0
