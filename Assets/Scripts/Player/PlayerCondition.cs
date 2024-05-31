@@ -15,6 +15,8 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     Condition stamina { get { return uiCondition.stamina; } }
 
     public float noHungerHealthDecay;
+    public float movingStaminaDecay;
+
 
     public event Action onTakeDamage; // 대미지 받았을때 발생하는 이벤트
 
@@ -27,6 +29,12 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         if(hunger.curValue <= 0.0f)
         {
             health.Subtract(noHungerHealthDecay*Time.deltaTime);
+        }
+
+        if (CharacterManager.Instance.Player.controller.isMoving)
+        {
+            //Debug.Log("stamina declining");
+            stamina.Subtract(movingStaminaDecay * Time.deltaTime);
         }
 
         if (health.curValue <= 0.0f)
@@ -53,5 +61,15 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     {
         health.Subtract(damage);
         onTakeDamage?.Invoke();
+    }
+
+    public bool UseStamina(float amount)
+    {
+        if (stamina.curValue - amount < 0)
+        {
+            return false;
+        }
+        stamina.Subtract(amount);
+        return true;
     }
 }

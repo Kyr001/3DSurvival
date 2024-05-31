@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 curMovementInput;
     public LayerMask groundLayerMask;
     public LayerMask jumpAreaMask;
+    public bool isMoving = false;
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -42,6 +43,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate() //물리연산
     {
+        if(curMovementInput == Vector2.zero)
+            isMoving = false;
         Move();
     }
 
@@ -76,12 +79,12 @@ public class PlayerController : MonoBehaviour
     {
        if(context.phase == InputActionPhase.Performed) // 키가 눌릴 때 Started, 키가 눌린 후에도 계속 호출하려면 Performed
         {
+            isMoving = true;
             curMovementInput = context.ReadValue<Vector2>();
         }
        else if(context.phase == InputActionPhase.Canceled) // 액션 취소됐을 때
         {
             curMovementInput = Vector2.zero;
-
         }
     }
 
